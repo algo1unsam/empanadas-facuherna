@@ -20,7 +20,8 @@ object baigorria {
  	
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
 	method cobrarSueldo(){dinero=self.sueldo()
-		self.pagarDeuda()
+		if (deuda>0){self.pagarDeuda()}
+		
 	}
 	method gastar(cuanto){ 
 		if (dinero>=cuanto){
