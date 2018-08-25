@@ -28,9 +28,8 @@ test"baigorria tiene 15000 de sueldo , dinero 0 , deuda 0"{
 	assert.equals(0,baigorria.totalDeuda())
 }
 test"baigorria gasta 4000, dinero 0 ,deuda 4000 y despues gasta 8000 ,dinero 0 ,deuda 12000"{
+	baigorria.cantidadEmpanadasVendidas(1000)
 	baigorria.gastar(4000)
-	assert.equals(4000,baigorria.totalDeuda())
-	assert.equals(0,baigorria.totalDinero())
 	baigorria.gastar(8000)
 	assert.equals(12000,baigorria.totalDeuda())
 	assert.equals(0,baigorria.totalDinero())
