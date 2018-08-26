@@ -13,6 +13,7 @@ object baigorria {
 	var montoPorEmpanada = 15
 	var dinero=0
 	var deuda=0
+
 	
 	method venderEmpanada() {
 		cantidadEmpanadasVendidas += 1
@@ -31,7 +32,7 @@ object baigorria {
 		if (dinero>=cuanto){
 		dinero-=cuanto}
 		else{ 
-			deuda=cuanto-dinero
+			deuda=deuda+(cuanto-dinero)
 			dinero=0
 		}		
 	}

@@ -39,6 +39,31 @@ test "baigorria cobra los 15000 ,dinero 3000 , deuda 0"{
 	
 	baigorria.cantidadEmpanadasVendidas(1000)
 	baigorria.cobrarSueldo()
+	baigorria.gastar(4000)
+	baigorria.gastar(8000)
 	assert.equals(3000,baigorria.totalDinero())
 	assert.equals(0,baigorria.totalDeuda())
+}
+
+test "baigorria gasta 25000 y paga 3000 , dinero 0 y deuda 22000"{
+	baigorria.cantidadEmpanadasVendidas(1000)
+	baigorria.cobrarSueldo()
+	baigorria.gastar(4000)
+	baigorria.gastar(8000)
+	baigorria.gastar(25000)
+	assert.equals(0,baigorria.totalDinero())
+	assert.equals(22000,baigorria.totalDeuda())
+}
+
+test "baigorria cobra 15000 pero paga su deuda y no le alcanza,dinero 0  y deuda 7000"{
+	baigorria.cantidadEmpanadasVendidas(1000)
+	baigorria.cobrarSueldo()
+	baigorria.gastar(4000)
+	baigorria.gastar(8000)
+	baigorria.gastar(25000)
+	baigorria.cantidadEmpanadasVendidas(1000)
+	baigorria.cobrarSueldo()
+	baigorria.gastar(22000)
+	assert.equals(0,baigorria.totalDinero())
+	assert.equals(7000,baigorria.totalDeuda())
 }
