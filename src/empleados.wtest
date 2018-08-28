@@ -63,7 +63,7 @@ test "baigorria cobra 15000 pero paga su deuda y no le alcanza,dinero 0  y deuda
 	baigorria.gastar(25000)
 	baigorria.cantidadEmpanadasVendidas(1000)
 	baigorria.cobrarSueldo()
-	baigorria.gastar(22000)
+	baigorria.pagarDeuda()
 	assert.equals(0,baigorria.totalDinero())
 	assert.equals(7000,baigorria.totalDeuda())
 }
